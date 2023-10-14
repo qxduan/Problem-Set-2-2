@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-2-4</title>
+</head>
+<body>
+
+<h2>2-2-4</h2>
+
+<form id="Form">
+      <label for="name">Name:</label><br>
+      <input type="text" id="username" name="username"><br>
+
+      <button type="button" onclick="speak()">Hello</button> 
+      <button type="button" onclick="speak()">Good Bye</button>
+      <button type="button" onclick="speak()">Greetings</button>
+</form>
+
+<script>
+      
+      function speak(){
+          const username = document.getElementById("username").value;
+          // read the text that is on the button to get the greeting prefix
+          const greeting_prefix = event.target.textContent;
+
+          alert(greeting_prefix+ " "+username);
+      }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Numbered List</title>
+</head>
+<body>
+
+<h2>2-2-2</h2>
+
+<p> a default comma-separated string:</p>
+<input type="text" id="inputText" value="Pat, Chris, Marlon, Ferncroft, Assunta">
+<button onclick="display_numbered_list()">Generate List</button>
+
+<ul id="numberedList"></ul>
+
+<script>
+    function display_numbered_list() {
+        // turn into string value first
+        const inputValue = document.getElementById("inputText").value;
+
+        // split the string by commas into an array
+        const items = inputValue.split(',').map(item => item.trim());
+
+        // reference to the desired list
+        const listElement = document.getElementById("numberedList");
+        listElement.innerHTML = '';
+
+        // append
+        items.forEach(item => {
+            const listItem = document.createElement("li");
+            listItem.textContent = item;
+            listElement.appendChild(listItem);
+        });
+    }
+</script>
+
+</body>
+</html>
